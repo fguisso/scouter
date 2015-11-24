@@ -1,0 +1,14 @@
+doctype html
+- var data = {"title": "StarFox Scouter", "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+html
+ head
+  title #{data.title} - Informations of FoxBit Exchange
+  meta(charset='utf-8')
+  link(text='text/css' rel='stylesheet' href='assets/styles/style.css')
+  link(type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800')
+
+ body
+  include html ../../../../assets/images/fg.svg
+  h1 #{data.title}
+  h2 Foxbit exchange
+  p #{data.lorem}
