@@ -1,14 +1,38 @@
 doctype html
-- var data = {"title": "StarFox Scouter", "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+- var content = {"title": "StarFox Scouter", "text": "The data are updated with the page, reload for new data. To-Do: update data every minute."}
 html
  head
-  title #{data.title} - Informations of FoxBit Exchange
+  title #{content.title} - Informations of FoxBit Exchange
   meta(charset='utf-8')
   link(text='text/css' rel='stylesheet' href='assets/styles/style.css')
   link(type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800')
 
  body
-  include html ../../../../assets/images/fg.svg
-  h1 #{data.title}
+  img(src="assets/images/scouter.png")
+  h1 #{content.title}
   h2 Foxbit exchange
-  p #{data.lorem}
+  table
+    tbody
+      tr
+        td.left.top Low
+        td#low.right.top Value
+      tr
+        td.left High
+        td#high.right Valu
+      tr
+        td.left Last
+        td#last.right Value
+      tr
+        td.left Buy
+        td#buy.right Value
+      tr
+        td.left Sell
+        td#sell.right Value
+      tr
+        td.left.bottom Vol
+        td#vol.right.bottom Value
+  p.content #{content.text}
+  footer
+    include html ../../../../assets/images/logo.svg
+    p Created by fernandoGuisso, fork it in <a href="#">gh</a>.
+  script(src='assets/scripts/script.js')
