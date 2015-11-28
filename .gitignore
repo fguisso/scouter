@@ -1,3 +1,7 @@
+.DS_Store
 npm-debug.log
 bin/node_modules
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> 0014f13c3811e40936271a61dfbcf2de4dc7ccc6
