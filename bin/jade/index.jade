@@ -1,9 +1,10 @@
 doctype html
-- var content = {"title": "StarFox Scouter", "text": "The data are updated with the page, reload for new data. To-Do: update data every minute."}
+- var content = {"title": "StarFox Scouter"}
 html
  head
   title #{content.title} - Informations of FoxBit Exchange
   meta(charset='utf-8')
+  meta(http-equiv='refresh' content='15')
   link(text='text/css' rel='stylesheet' href='assets/styles/style.css')
   link(type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800')
 
@@ -15,23 +16,22 @@ html
     tbody
       tr
         td.left.top Low
-        td#low.right.top Value
+        td#low.right.top
       tr
         td.left High
-        td#high.right Valu
+        td#high.right
       tr
         td.left Last
-        td#last.right Value
+        td#last.right
       tr
         td.left Buy
-        td#buy.right Value
+        td#buy.right
       tr
         td.left Sell
-        td#sell.right Value
+        td#sell.right
       tr
         td.left.bottom Vol
-        td#vol.right.bottom Value
-  p.content #{content.text}
+        td#vol.right.bottom
   footer
     include html ../../../../assets/images/logo.svg
     p Created by fernandoGuisso, fork it in <a href="https://github.com/fernandoGuisso/scouter">gh</a>.
