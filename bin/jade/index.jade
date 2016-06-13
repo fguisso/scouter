@@ -4,7 +4,7 @@ html
  head
   title #{content.title} - Informations of FoxBit Exchange
   meta(charset='utf-8')
-  meta(http-equiv='refresh' content='15')
+  //- meta(http-equiv='refresh' content='15')
   link(text='text/css' rel='stylesheet' href='assets/styles/style.css')
   link(type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800')
 
@@ -12,27 +12,53 @@ html
   img(src="assets/images/scouter.png")
   h1 #{content.title}
   h2 Foxbit exchange
-  table
-    tbody
-      tr
-        td.left.top Low
-        td#low.right.top
-      tr
-        td.left High
-        td#high.right
-      tr
-        td.left Last
-        td#last.right
-      tr
-        td.left Buy
-        td#buy.right
-      tr
-        td.left Sell
-        td#sell.right
-      tr
-        td.left.bottom Vol
-        td#vol.right.bottom
+
+  div(ng-app="myApp" ng-controller="jsonController")
+    table
+      tbody
+        tr
+          td.left.top Low
+          td.right.top {{ ticker.low }}
+        tr
+          td.left High
+          td.right {{ ticker.high }}
+        tr
+          td.left Last
+          td.right {{ ticker.last }}
+        tr
+          td.left Buy
+          td.right {{ ticker.buy }}
+        tr
+          td.left Sell
+          td.right {{ ticker.sell }}
+        tr
+          td.left.bottom Vol
+          td.right.bottom {{ ticker.vol }}
+
+    table
+      thead(class="buy")
+        tr
+          td Compra
+        tr
+          td Preço
+          td Volume
+      tbody
+        tr(ng-repeat="bid in bids | limitTo:10")
+          td R$ {{ bid[0] }}
+          td {{ bid[1] }}
+    table
+      thead(class="sel")
+        tr
+          td Venda
+        tr
+          td Preço
+          td Volume
+      tbody
+        tr(ng-repeat="ask in asks | limitTo:10")
+          td R$ {{ ask[0] }}
+          td {{ ask[1] }}
   footer
-    include html ../../../../assets/images/logo.svg
+    include ../../assets/images/logo.svg
     p Created by fernandoGuisso, fork it in <a href="https://github.com/fernandoGuisso/scouter">gh</a>.
+  script(src='assets/scripts/angular.min.js')
   script(src='assets/scripts/script.js')
